@@ -1,0 +1,26 @@
+### Créer un item
+POST http://localhost:4000/items
+Content-Type: application/json
+
+{
+  "title": "câble usb",
+  "quantity": 10,
+  "color": "#000000"
+}
+
+###
+
+### Récupérer tous les utilisateurs (si tu fais une route GET plus tard)
+GET http://localhost:4000/items
+
+### PATCH un item existant (remplace `YOUR_ITEM_ID` par un vrai ID)
+PATCH http://localhost:4000/items/3
+Content-Type: application/json
+
+{
+  "title": "câble usb premium"
+}
+
+### DELETE un item existant (remplace `YOUR_ITEM_ID` par un vrai ID)
+DELETE http://localhost:4000/items/1
+Content-Type: application/json
