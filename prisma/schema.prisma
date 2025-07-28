@@ -17,6 +17,6 @@ model Item {
   id       Int     @id @default(autoincrement())
   title     String
   quantity Int     @default(1)
-  color String? @default("#eaeaea")
+  color String? @default("#e2e2e2")
   completed Boolean @default(false)
 }

@@ -14,11 +14,13 @@ Content-Type: application/json
 GET http://localhost:4000/items
 
 ### PATCH un item existant (remplace `YOUR_ITEM_ID` par un vrai ID)
-PATCH http://localhost:4000/items/3
+PATCH http://localhost:4000/items/2
 Content-Type: application/json
 
 {
-  "title": "câble usb premium"
+  "title" : "fraise",
+  "quantity": 7,
+  "color": "#51d821"
 }
 
 ### DELETE un item existant (remplace `YOUR_ITEM_ID` par un vrai ID)

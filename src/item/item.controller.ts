@@ -50,12 +50,10 @@ export const updateItem = async (
 ): Promise<Response> => {
   try {
     const { id } = req.params;
-    const { title, quantity, color } = req.body;
+    const { title, quantity, color, completed } = req.body;
 
     const itemId = Number(id);
     if (isNaN(itemId)) return res.json({ error: "Invalid ID" }).status(400);
-
-    if (!title) return res.json({ error: "Title is required" }).status(400);
 
     const existingItem = await prisma.item.findUnique({
       where: { id: itemId },
@@ -70,6 +68,7 @@ export const updateItem = async (
         title,
         quantity,
         color,
+        completed
       },
     });
 
@@ -106,7 +105,7 @@ export const deleteItem = async (
     const deletedItem = await prisma.item.delete({ where: { id: itemId } });
 
     return res
-      .json({ message: "User deleted successfully", deleteItem })
+      .json({ message: "User deleted successfully", deletedItem })
       .status(200);
   } catch (error: any) {
     console.error("DELETE /items/:id error :", error);
