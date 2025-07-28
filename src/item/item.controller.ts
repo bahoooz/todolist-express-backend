@@ -105,7 +105,7 @@ export const deleteItem = async (
     const deletedItem = await prisma.item.delete({ where: { id: itemId } });
 
     return res
-      .json({ message: "User deleted successfully", deletedItem })
+      .json({ message: "Item deleted successfully", deletedItem })
       .status(200);
   } catch (error: any) {
     console.error("DELETE /items/:id error :", error);
